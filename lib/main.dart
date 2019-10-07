@@ -7,8 +7,6 @@ void main() {
   ));
 }
 
-
-
 class translate extends StatefulWidget {
 
   @override
@@ -60,26 +58,33 @@ class  _translateState extends State<translate> {
                   color: Colors.blue,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 20, left: 30),
-                child: Icon(
-                  Icons.compare_arrows,
-                  color: Colors.blue,
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 20, left: 30),
+                  child: Icon(
+                    Icons.compare_arrows,
+                    color: Colors.blue,
+                  ),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 20, left: 30),
                 child: Text(
                   'Indonesian',
-                  style: TextStyle(fontSize: 25, color: Colors.blue),
+                  style: TextStyle(fontSize: 25, color: Colors.blue,),
+                  textAlign: TextAlign.end,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 20),
-                child: Icon(
-                  Icons.arrow_drop_down,
-                  color: Colors.blue,
-                ),
+              Container(
+                alignment: Alignment.topRight,
+                  child: Padding(
+                    padding: const EdgeInsets.only(top:20,right: 5),
+                    child: Icon(
+                      Icons.arrow_drop_down,
+                      color: Colors.blue,
+                    ),
+                  ),
+
               ),
             ],
           ),
@@ -91,14 +96,17 @@ class  _translateState extends State<translate> {
                 height: 10,
               )),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+           // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.only(left: 15, top: 20),
-                child: Icon(
-                  Icons.volume_up,
-                  size: 30,
-                  color: Colors.black,
+              Container(
+                alignment: Alignment.topLeft,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 15, top: 20),
+                  child: Icon(
+                    Icons.volume_up,
+                    size: 30,
+                    color: Colors.black,
+                  ),
                 ),
               ),
               Padding(
@@ -106,14 +114,20 @@ class  _translateState extends State<translate> {
                 child: Text(
                   'ENGLISH',
                   style: TextStyle(fontSize: 20, color: Colors.black),
+                  textAlign: TextAlign.left,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 20, left: 200),
-                child: Icon(
-                  Icons.clear,
-                  color: Colors.black,
-                  size: 30,
+              Expanded(
+                child: Container(
+                  alignment: Alignment.topRight,
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 20),
+                    child: Icon(
+                      Icons.clear,
+                      color: Colors.black,
+                      size: 30,
+                    ),
+                  ),
                 ),
               ),
             ],
@@ -129,7 +143,7 @@ class  _translateState extends State<translate> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 15, bottom: 5),
+            padding: const EdgeInsets.only(top: 15, bottom:10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
@@ -174,7 +188,7 @@ class  _translateState extends State<translate> {
               ],
             ),
           ),
-          Expanded(flex: 2,
+          Expanded(flex: 1,
             child: Container(
               color: Colors.black12,
               child: Column(
@@ -184,7 +198,7 @@ class  _translateState extends State<translate> {
                   Padding(
                     padding: const EdgeInsets.only(top: 2),
                     child: Card(
-                      color: Colors.blue,
+                      color: Colors.indigoAccent,
                       elevation: 10,
                       child: Container(
                         child: Column(
@@ -192,7 +206,7 @@ class  _translateState extends State<translate> {
                          // mainAxisSize: MainAxisSize.max,
                           children: <Widget>[
                             Row(
-                              // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                             //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
                                 Padding(
                                   padding:
@@ -210,18 +224,21 @@ class  _translateState extends State<translate> {
                                     'INDONESIAN',
                                     style: TextStyle(
                                         fontSize: 25, color: Colors.white),
-                                  ),
+                                    textAlign: TextAlign.left ),
                                 ),
-                                Container(
-                                  alignment: Alignment.topRight,
-                                  child: Padding(
-                                    padding:
-                                    const EdgeInsets.only(top: 10,left:80),
-                                    child: IconButton(
-                                      color: Colors.white,
-                                      iconSize: 25,
-                                      icon: Icon(staricon),
-                                      onPressed: starmethod,
+                                Expanded(
+                                  child: Container(
+                                    alignment: Alignment.topRight,
+                                    child: Padding(
+                                      padding:
+                                      const EdgeInsets.only(top: 10,left:90),
+                                      child: IconButton(
+                                        alignment: Alignment.topRight,
+                                        color: Colors.white,
+                                        iconSize: 30,
+                                        icon: Icon(staricon),
+                                        onPressed: starmethod,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -229,7 +246,7 @@ class  _translateState extends State<translate> {
                             ),
                             Container(
                               child: Padding(
-                                padding: const EdgeInsets.only(left:15),
+                                padding: const EdgeInsets.only(left:15,bottom: 10),
                                 child: Text(
                                   'Selamat pagi',
                                   style: TextStyle(
@@ -240,7 +257,7 @@ class  _translateState extends State<translate> {
                             ),
                             Padding(
                               padding: const EdgeInsets.only(
-                                  top: 20, bottom: 10),
+                                  top: 20, bottom:20),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: <Widget>[
@@ -262,57 +279,59 @@ class  _translateState extends State<translate> {
                       ),
                     ),
                   ),
-                  Card(
-                    color: Colors.white,
-                    elevation: 10,
-                    child: Column(
-                      children: <Widget>[
-                        Container(
-                          child: Padding(
-                            padding: const EdgeInsets.only(left: 15, top: 10),
-                            child: Text(
-                              'DEFINITIONS',
-                              style: TextStyle(
-                                  fontSize: 25, color: Colors.black),
+                  Expanded(flex: 1,
+                    child: Card(
+                      color: Colors.white,
+                      elevation: 10,
+                      child: Column(
+                        children: <Widget>[
+                          Container(
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 15,bottom:10),
+                              child: Text(
+                                'DEFINITIONS',
+                                style: TextStyle(
+                                    fontSize: 20, color: Colors.black),
+                              ),
                             ),
+                            alignment: Alignment.topLeft,
                           ),
-                          alignment: Alignment.topLeft,
-                        ),
-                        Container(
-                          child: Padding(
-                            padding: const EdgeInsets.only(left: 15),
-                            child: Text(
-                              'exclamation',
-                              style:
-                              TextStyle(fontSize: 15, color: Colors.black54),
+                          Container(
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 15,bottom: 5),
+                              child: Text(
+                                'exclamation',
+                                style:
+                                TextStyle(fontSize: 15, color: Colors.black54),
+                              ),
                             ),
+                            alignment: Alignment.topLeft,
                           ),
-                          alignment: Alignment.topLeft,
-                        ),
-                        Container(
-                          child: Padding(
-                            padding: const EdgeInsets.only(left: 25, top: 5),
-                            child: Text(
-                              'expressing good wishes on meeting or parting on morning',
-                              style: TextStyle(
-                                  fontSize: 15, color: Colors.black),
+                          Container(
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 25, top: 5),
+                              child: Text(
+                                'expressing good wishes on meeting or parting on morning',
+                                style: TextStyle(
+                                    fontSize: 18, color: Colors.black),
+                              ),
                             ),
+                            alignment: Alignment.topLeft,
                           ),
-                          alignment: Alignment.topLeft,
-                        ),
-                        Container(
-                          child: Padding(
-                            padding: const EdgeInsets.only(
-                                left: 25, top: 5, bottom: 10),
-                            child: Text(
-                              '\"He walked into Stein\'s lounge on Tuesday morning , bidding good morning to everyone who lined on his route.\"',
-                              style:
-                              TextStyle(fontSize: 12, color: Colors.black54),
+                          Container(
+                            child: Padding(
+                              padding: const EdgeInsets.only(
+                                  left: 25, top: 5, bottom: 10),
+                              child: Text(
+                                '\"He walked into Stein\'s lounge on Tuesday morning , bidding good morning to everyone who lined on his route.\"',
+                                style:
+                                TextStyle(fontSize: 15, color: Colors.black54),
+                              ),
                             ),
+                            alignment: Alignment.topLeft,
                           ),
-                          alignment: Alignment.topLeft,
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ],
